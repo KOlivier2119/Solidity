@@ -2,13 +2,15 @@
 pragma solidity ^0.8.0;
 
 contract Calculator {
-    uint public value;
-    function increment() external returns (uint){
-        return value += 1;
+    uint value;
+    function increment() public returns (uint){
+         value += 1;
+         return value;
     }
 
     function decrement() public returns (uint) {
-        return value -= 1;
+       value -= 1;
+       return value;
     }
 
     function square() public view returns (uint){
@@ -17,5 +19,9 @@ contract Calculator {
 
     function getValue() public view returns (uint) {
         return value;
+    }
+
+    function setValue(uint _value) public {
+        value = _value;
     }
 }
